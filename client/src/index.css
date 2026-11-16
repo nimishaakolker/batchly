@@ -1,0 +1,71 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #000; background: #fff; }
+h1, h2, h3 { margin: 0 0 12px; }
+h2 { font-size: 24px; }
+h3 { font-size: 16px; margin-top: 24px; }
+.muted { color: #666; font-size: 14px; margin: 0 0 16px; }
+.error { color: #b00020; font-size: 14px; margin: 8px 0; }
+.success { color: #000; background: #f0f0f0; padding: 8px 12px; border: 1px solid #000; font-size: 14px; }
+
+input, select { padding: 9px 10px; border: 1px solid #000; background: #fff; color: #000; font-size: 14px; border-radius: 0; font-family: inherit; }
+button { padding: 9px 16px; border: 1px solid #000; background: #000; color: #fff; font-size: 14px; cursor: pointer; font-family: inherit; }
+button:hover { background: #333; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+button.ghost { background: #fff; color: #000; }
+button.ghost:hover { background: #eee; }
+label { display: block; font-size: 13px; margin: 12px 0 4px; }
+
+.shell { display: flex; min-height: 100vh; }
+.sidebar { width: 220px; background: #000; color: #fff; padding: 24px 16px; display: flex; flex-direction: column; flex-shrink: 0; }
+.sidebar h1 { font-size: 22px; letter-spacing: 1px; margin-bottom: 24px; }
+.sidebar nav { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.sidebar nav a { color: #aaa; text-decoration: none; padding: 10px 12px; font-size: 14px; }
+.sidebar nav a.active { background: #fff; color: #000; }
+.sidebar nav a:hover:not(.active) { color: #fff; }
+.sidebar .user { border-top: 1px solid #333; padding-top: 16px; font-size: 14px; }
+.sidebar .user small { display: block; color: #888; margin-bottom: 10px; text-transform: capitalize; }
+.sidebar .user button.ghost { background: transparent; color: #fff; border-color: #fff; width: 100%; }
+.sidebar .user button.ghost:hover { background: #222; }
+.content { flex: 1; padding: 32px; min-width: 0; max-width: 1100px; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.card { border: 1px solid #000; padding: 16px; }
+.card small { display: block; color: #666; margin-bottom: 8px; }
+.card strong { font-size: 24px; }
+.panel { border: 1px solid #ccc; padding: 16px; margin-bottom: 16px; }
+.panel h3 { margin-top: 0; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.row-between { display: flex; justify-content: space-between; align-items: center; margin: 8px 0; gap: 8px; }
+.summary { line-height: 1.6; margin: 12px 0 0; }
+.inline-form { display: flex; flex-wrap: wrap; gap: 8px; }
+.inline-form input, .inline-form select { flex: 1 1 140px; }
+.line { display: flex; gap: 8px; align-items: center; margin: 10px 0; flex-wrap: wrap; }
+.line select { flex: 2 1 200px; }
+.line input { width: 90px; }
+.line span { min-width: 90px; }
+form.panel select { width: 100%; margin-bottom: 4px; }
+.line select { width: auto; margin: 0; }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; border-bottom: 2px solid #000; padding: 10px 8px; }
+td { border-bottom: 1px solid #ddd; padding: 10px 8px; }
+.tag { border: 1px solid #000; padding: 2px 6px; font-size: 11px; font-weight: 600; }
+
+.login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 16px; }
+.login-box { width: 100%; max-width: 360px; border: 1px solid #000; padding: 32px; }
+.login-box input { width: 100%; }
+.login-box button:not(.ghost) { width: 100%; margin-top: 16px; }
+.demo { margin-top: 20px; border-top: 1px solid #ddd; padding-top: 12px; }
+
+@media (max-width: 800px) {
+  .shell { flex-direction: column; }
+  .sidebar { width: 100%; flex-direction: row; flex-wrap: wrap; align-items: center; padding: 12px; gap: 8px; }
+  .sidebar h1 { margin: 0 12px 0 0; font-size: 18px; }
+  .sidebar nav { flex-direction: row; flex: 1 1 100%; order: 3; overflow-x: auto; }
+  .sidebar .user { border: 0; padding: 0; margin-left: auto; display: flex; align-items: center; gap: 8px; }
+  .sidebar .user small { margin: 0; }
+  .sidebar .user button.ghost { width: auto; padding: 6px 10px; }
+  .content { padding: 16px; }
+  .grid-2 { grid-template-columns: 1fr; }
+}
